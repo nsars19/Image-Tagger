@@ -1,6 +1,9 @@
 import Target from "./components/Target";
 import Menu from "./components/Menu";
 import styled from "styled-components";
+import waldo from "./assets/waldo.png";
+import odlaw from "./assets/odlaw.png";
+import wiz from "./assets/wiz.png";
 
 const StyledMenuModal = styled.div`
   display: ${(props) => (props.showModal ? "flex" : "none")};
