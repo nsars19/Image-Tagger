@@ -7,7 +7,7 @@ const StyledMenuModal = styled.div`
   flex-direction: row;
   position: absolute;
   top: ${(props) => props.y - 30}px;
-  left: ${(props) => props.x - 30}px;
+  left: ${(props) => props.x - 32}px;
 `;
 
 const MenuModal = ({ showModal, toggleModal, cursorPosition }) => {
