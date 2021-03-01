@@ -3,13 +3,13 @@ import styled from "styled-components";
 const StyledTarget = styled.div`
   height: 60px;
   width: 60px;
-  border: 3px solid #4a4a4a;
+  border: 3px solid #${(props) => props.colors.cream};
   border-right: none;
-  background: #fff3;
+  background: #${(props) => props.colors.lightBlue}44;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 14px 0 0 14px;
+  border-radius: 8px 0 0 8px;
   animation: grow 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.28);
 
   @keyframes grow {
@@ -30,7 +30,7 @@ const StyledTarget = styled.div`
   span {
     height: 2px;
     width: 10px;
-    background: #4a4a4a;
+    background: #${(props) => props.colors.darkBlue};
     position: absolute;
     transform: rotate(45deg);
   }
@@ -40,9 +40,9 @@ const StyledTarget = styled.div`
   }
 `;
 
-function Target({ onClick }) {
+function Target({ onClick, colors }) {
   return (
-    <StyledTarget onClick={onClick}>
+    <StyledTarget colors={colors} onClick={onClick}>
       <span></span>
       <span></span>
     </StyledTarget>
