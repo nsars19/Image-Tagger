@@ -25,9 +25,18 @@ const MenuModal = ({ showModal, toggleModal, cursorPosition, colors }) => {
     >
       <Target onClick={toggleModal} colors={colors} />
       <Menu colors={colors} toggleModal={toggleModal}>
-        <div>Waldo</div>
-        <div>Odlaw</div>
-        <div>Wizard</div>
+        <div>
+          <img src={waldo} alt={"Waldo"} />
+          <p>Waldo</p>
+        </div>
+        <div>
+          <img src={odlaw} alt={"Odlaw"} />
+          <p>Odlaw</p>
+        </div>
+        <div>
+          <img src={wiz} alt={"Wizard"} />
+          <p>Wizard</p>
+        </div>
       </Menu>
     </StyledMenuModal>
   );
