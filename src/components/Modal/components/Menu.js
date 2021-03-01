@@ -9,9 +9,12 @@ const StyledMenu = styled.div`
   border-radius: 0 8px 8px 8px;
 
   & > div {
-    width: 130px;
+    // width: 110px;
     padding: 8px 10px;
     border-bottom: 1px solid #${(props) => props.colors.gray};
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
   }
   & div:last-child {
     border-bottom: none;
@@ -26,6 +29,11 @@ const StyledMenu = styled.div`
   & div:active {
     background: #${(props) => props.colors.lightBlue};
     color: #${(props) => props.colors.cream};
+  }
+
+  img {
+    padding-right: 8px;
+    max-height: 24px;
   }
 `;
 
