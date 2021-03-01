@@ -1,5 +1,5 @@
-import Target from "./Target";
-import Menu from "./Menu";
+import Target from "./components/Target";
+import Menu from "./components/Menu";
 import styled from "styled-components";
 
 const StyledMenuModal = styled.div`
@@ -21,7 +21,7 @@ const MenuModal = ({ showModal, toggleModal, cursorPosition, colors }) => {
       y={y}
     >
       <Target onClick={toggleModal} colors={colors} />
-      <Menu colors={colors}>
+      <Menu colors={colors} toggleModal={toggleModal}>
         <div>Waldo</div>
         <div>Odlaw</div>
         <div>Wizard</div>
