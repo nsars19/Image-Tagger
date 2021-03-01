@@ -10,6 +10,12 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    font-family: Arial, Courier;
+    letter-spacing: 1px;
+  }
+
+  body {
+    background: #f9f7f7;
   }
 `;
 
