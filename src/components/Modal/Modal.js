@@ -10,7 +10,7 @@ const StyledMenuModal = styled.div`
   left: ${(props) => props.x - 32}px;
 `;
 
-const MenuModal = ({ showModal, toggleModal, cursorPosition }) => {
+const MenuModal = ({ showModal, toggleModal, cursorPosition, colors }) => {
   const [x, y] = cursorPosition;
 
   return (
@@ -20,8 +20,8 @@ const MenuModal = ({ showModal, toggleModal, cursorPosition }) => {
       x={x}
       y={y}
     >
-      <Target onClick={toggleModal} />
-      <Menu>
+      <Target onClick={toggleModal} colors={colors} />
+      <Menu colors={colors}>
         <div>Waldo</div>
         <div>Odlaw</div>
         <div>Wizard</div>
