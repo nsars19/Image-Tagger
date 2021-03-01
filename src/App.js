@@ -1,24 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import styled from "styled-components";
+import Modal from "./components/Modal/Modal";
+import waldo1 from "./waldo1.jpeg";
+
+const StyledImg = styled.img`
+  width: 100vw;
+  background-repeat: no-repeat;
+  background: center / contain no-repeat;
+`;
 
 function App() {
+  const [showModal, setModal] = useState(false);
+  const [cursorPosition, setCursorPosition] = useState([0, 0]);
+
+  const toggleModal = () => setModal(!showModal);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Modal
+        showModal={showModal}
+        toggleModal={toggleModal}
+        cursorPosition={cursorPosition}
+      />
+      <StyledImg
+        src={waldo1}
+        alt="where's waldo?"
+        onClick={(e) => {
+          console.log({ x: e.clientX, y: e.clientY });
+          setCursorPosition([e.clientX, e.clientY]);
+          toggleModal();
+        }}
+      ></StyledImg>
+    </>
   );
 }
 
