@@ -19,6 +19,11 @@ const StyledMenu = styled.div`
     justify-content: space-between;
     align-items: flex-end;
   }
+
+  & div:first-child {
+    border-radius: 0 5px 0 0;
+  }
+
   & div:last-child {
     border-bottom: none;
   }
