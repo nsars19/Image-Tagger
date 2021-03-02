@@ -6,7 +6,10 @@ const StyledMenu = styled.div`
   color: #${(props) => props.colors.darkBlue};
   font-family: Arial, Courier;
   letter-spacing: 1px;
-  border-radius: 0 8px 8px 8px;
+  // border-radius: 0 8px 8px 8px;
+  border-radius: ${({ x, width }) => {
+    return width - x < 162 ? "8px 0 0 8px" : "0 8px 8px 8px";
+  }};
   user-select: none;
 
   & > div {
@@ -37,14 +40,25 @@ const StyledMenu = styled.div`
   }
 `;
 
-function Menu({ children, colors, toggleModal }) {
+function Menu({ children, colors, toggleModal, cursorPosition }) {
+  const [x, y] = cursorPosition;
+
   const handleClick = (e) => {
-    console.log(e.target.innerText);
     toggleModal();
+    let targetName = e.target.id;
+
+    if (!targetName) targetName = e.target.parentNode.id;
+    console.log(targetName);
+    console.log(e.target);
   };
 
   return (
-    <StyledMenu colors={colors} onClick={handleClick}>
+    <StyledMenu
+      colors={colors}
+      onClick={handleClick}
+      x={x}
+      width={window.innerWidth}
+    >
       {children}
     </StyledMenu>
   );

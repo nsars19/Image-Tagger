@@ -7,10 +7,11 @@ import wiz from "./assets/wiz.png";
 
 const StyledModal = styled.div`
   display: ${(props) => (props.showModal ? "flex" : "none")};
-  flex-direction: row;
+  flex-direction: ${({ width, x }) =>
+    width - x < 162 ? "row-reverse" : "row"};
   position: absolute;
-  top: ${(props) => props.y - 30}px;
-  left: ${(props) => props.x - 32}px;
+  top: ${({ y }) => y - 30}px;
+  left: ${({ width, x }) => (width - x < 162 ? x - 143 : x - 32)}px;
 `;
 
 const characters = [
@@ -28,6 +29,7 @@ const Modal = ({ showModal, toggleModal, cursorPosition, colors }) => {
       cursorPosition={cursorPosition}
       x={x}
       y={y}
+      width={window.innerWidth}
     >
       <Target
         onClick={toggleModal}

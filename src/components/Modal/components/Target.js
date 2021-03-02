@@ -4,12 +4,19 @@ const StyledTarget = styled.div`
   height: 60px;
   width: 60px;
   border: 3px solid #${(props) => props.colors.cream};
-  border-right: none;
+  border-right: ${({ x, width, colors }) => {
+    return width - x < 162 ? "3px solid" + colors.cream : "none";
+  }};
+  border-left: ${({ x, width, colors }) => {
+    return width - x < 162 ? "none" : "3px solid" + colors.cream;
+  }};
   background: #${(props) => props.colors.lightBlue}44;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 8px 0 0 8px;
+  border-radius: ${({ x, width }) => {
+    return width - x < 162 ? "0 8px 8px 0" : "8px 0 0 8px";
+  }};
   animation: grow 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.28);
 
   @keyframes grow {
@@ -17,10 +24,6 @@ const StyledTarget = styled.div`
       height: 0px;
       width: 0px;
     }
-    // 50% {
-    //   height: 66px;
-    //   width: 66px;
-    // }
     100% {
       height: 60px;
       width: 60px;
@@ -40,9 +43,15 @@ const StyledTarget = styled.div`
   }
 `;
 
-function Target({ onClick, colors }) {
+function Target({ onClick, colors, cursorPosition }) {
+  const [x, y] = cursorPosition;
   return (
-    <StyledTarget colors={colors} onClick={onClick}>
+    <StyledTarget
+      colors={colors}
+      onClick={onClick}
+      x={x}
+      width={window.innerWidth}
+    >
       <span></span>
       <span></span>
     </StyledTarget>
