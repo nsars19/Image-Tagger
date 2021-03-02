@@ -17,7 +17,7 @@ const StyledTarget = styled.div`
   border-radius: ${({ x, width }) => {
     return width - x < 162 ? "0 8px 8px 0" : "8px 0 0 8px";
   }};
-  animation: grow 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+  animation: grow 0.25s cubic-bezier(0.18, 0.89, 0.32, 1.28);
 
   @keyframes grow {
     0% {
