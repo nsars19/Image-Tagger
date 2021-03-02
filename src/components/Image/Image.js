@@ -7,8 +7,8 @@ const StyledImage = styled.img`
   justify-content: center;
 `;
 
-const Image = ({ src, alt, handleClick }) => {
-  return <StyledImage src={src} alt={alt} onClick={handleClick} />;
+const Image = ({ src, alt, handleClick, id }) => {
+  return <StyledImage src={src} alt={alt} onClick={handleClick} id={id} />;
 };
 
 export default Image;
