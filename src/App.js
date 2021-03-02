@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Modal from "./components/Modal/Modal";
 import wave from "./assets/wave.png";
 import waldo1 from "./assets/waldo1.jpeg";
