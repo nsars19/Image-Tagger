@@ -42,6 +42,21 @@ function App() {
     },
   };
 
+  useEffect(() => {
+    // Get locations of characters by percentage
+    // const res = await fetch(api)
+    // const data = await res.json()
+  }, [currentImage]);
+
+  useEffect(() => {
+    for (let charName of foundChars) {
+      const menuElem = document.getElementById(charName);
+      menuElem.style.background = `#${colors.gray}88`;
+      menuElem.style.color = `#${colors.gray}`;
+      menuElem.style.filter = "grayscale(70%)";
+    }
+  });
+
   const toggleModal = () => setModal(!showModal);
 
   const checkGuess = ({ targetName, coords }) => {
