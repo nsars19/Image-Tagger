@@ -36,6 +36,9 @@ function App() {
   return (
     <>
       <Navbar colors={colors}>
+        <a href="localhost:3000">
+          <img src={wave} alt="Waldo" />
+        </a>
         <span>Restart</span>
         <span>Levels</span>
         <span>Highscores</span>
