@@ -21,7 +21,9 @@ const StyledMenu = styled.div`
   }
 
   & div:first-child {
-    border-radius: 0 5px 0 0;
+    border-radius: ${({ x, width }) => {
+      return width - x < 162 ? "5px 0 0 0" : "0 5px 0 0";
+    }};
   }
 
   & div:last-child {
