@@ -56,8 +56,7 @@ function App() {
   };
 
   const handleClick = (e) => {
-    console.log(e.target);
-    setCursorPosition([e.clientX, e.clientY]);
+    setCursorPosition([e.pageX, e.pageY]);
     toggleModal();
   };
 
