@@ -35,6 +35,20 @@ const StyledNavbar = styled.nav`
       border: 2px solid #${(props) => props.colors.cream};
     }
   }
+
+  a img {
+    height: 50px;
+    position: absolute;
+    left: 0;
+    top: 10px;
+  }
+
+  @media (max-width: 480px) {
+    span {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  }
 `;
 
 const Navbar = ({ children, colors }) => {
