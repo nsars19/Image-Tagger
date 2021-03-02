@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import wave from "./assets/wave.png";
 
 const StyledNavbar = styled.nav`
   display: flex;
@@ -52,7 +53,14 @@ const StyledNavbar = styled.nav`
 `;
 
 const Navbar = ({ children, colors }) => {
-  return <StyledNavbar colors={colors}>{children}</StyledNavbar>;
+  return (
+    <StyledNavbar colors={colors}>
+      <a href="localhost:3000">
+        <img src={wave} alt="Waldo" />
+      </a>
+      {children}
+    </StyledNavbar>
+  );
 };
 
 export default Navbar;

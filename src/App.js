@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import Modal from "./components/Modal/Modal";
-import wave from "./assets/wave.png";
 import waldo1 from "./assets/waldo1.jpeg";
 import waldo2 from "./assets/waldo2.jpeg";
 import waldo3 from "./assets/waldo3.jpeg";
@@ -94,9 +93,6 @@ function App() {
   return (
     <>
       <Navbar colors={colors}>
-        <a href="localhost:3000">
-          <img src={wave} alt="Waldo" />
-        </a>
         <span>Restart</span>
         <span>Levels</span>
         <span>Highscores</span>
