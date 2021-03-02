@@ -7,7 +7,7 @@ const StyledMenu = styled.div`
   font-family: Arial, Courier;
   letter-spacing: 1px;
   border-radius: ${({ x, width }) => {
-    return width - x < 162 ? "8px 0 0 8px" : "0 8px 8px 8px";
+    return width - x < 162 ? "8px 0 8px 8px" : "0 8px 8px 8px";
   }};
   user-select: none;
 
@@ -18,8 +18,14 @@ const StyledMenu = styled.div`
     justify-content: space-between;
     align-items: flex-end;
   }
+
+  & div:first-child {
+    border-radius: 0 5px 0 0;
+  }
+
   & div:last-child {
     border-bottom: none;
+    border-radius: 0 0 5px 5px;
   }
 
   & div:hover {
@@ -39,16 +45,27 @@ const StyledMenu = styled.div`
   }
 `;
 
-function Menu({ children, colors, toggleModal, cursorPosition }) {
+function Menu({
+  children,
+  colors,
+  toggleModal,
+  cursorPosition,
+  checkGuess,
+  foundChars,
+}) {
   const [x, y] = cursorPosition;
+  const coords = [x, y - 60];
 
   const handleClick = (e) => {
-    toggleModal();
     let targetName = e.target.id;
 
     if (!targetName) targetName = e.target.parentNode.id;
-    console.log(targetName);
-    console.log(e.target);
+
+    // Prevent guessing of already guessed characters & toggling of Modal
+    if (foundChars.includes(targetName)) return;
+
+    checkGuess({ targetName, coords });
+    toggleModal();
   };
 
   return (
