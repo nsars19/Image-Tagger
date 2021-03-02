@@ -20,7 +20,14 @@ const characters = [
   { name: "Wizard", src: wiz, id: 3 },
 ];
 
-const Modal = ({ showModal, toggleModal, cursorPosition, colors }) => {
+const Modal = ({
+  showModal,
+  toggleModal,
+  cursorPosition,
+  colors,
+  checkGuess,
+  foundChars,
+}) => {
   const [x, y] = cursorPosition;
 
   return (
@@ -40,6 +47,8 @@ const Modal = ({ showModal, toggleModal, cursorPosition, colors }) => {
         colors={colors}
         toggleModal={toggleModal}
         cursorPosition={cursorPosition}
+        checkGuess={checkGuess}
+        foundChars={foundChars}
       >
         {characters.map(({ name, src, id }) => {
           return (
