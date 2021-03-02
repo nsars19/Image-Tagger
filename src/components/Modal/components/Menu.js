@@ -9,7 +9,6 @@ const StyledMenu = styled.div`
   border-radius: 0 8px 8px 8px;
 
   & > div {
-    // width: 110px;
     padding: 8px 10px;
     border-bottom: 1px solid #${(props) => props.colors.gray};
     display: flex;

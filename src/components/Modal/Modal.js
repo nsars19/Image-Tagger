@@ -5,7 +5,7 @@ import waldo from "./assets/waldo.png";
 import odlaw from "./assets/odlaw.png";
 import wiz from "./assets/wiz.png";
 
-const StyledMenuModal = styled.div`
+const StyledModal = styled.div`
   display: ${(props) => (props.showModal ? "flex" : "none")};
   flex-direction: row;
   position: absolute;
@@ -13,11 +13,11 @@ const StyledMenuModal = styled.div`
   left: ${(props) => props.x - 32}px;
 `;
 
-const MenuModal = ({ showModal, toggleModal, cursorPosition, colors }) => {
+const Modal = ({ showModal, toggleModal, cursorPosition, colors }) => {
   const [x, y] = cursorPosition;
 
   return (
-    <StyledMenuModal
+    <StyledModal
       showModal={showModal}
       cursorPosition={cursorPosition}
       x={x}
@@ -38,8 +38,8 @@ const MenuModal = ({ showModal, toggleModal, cursorPosition, colors }) => {
           <p>Wizard</p>
         </div>
       </Menu>
-    </StyledMenuModal>
+    </StyledModal>
   );
 };
 
-export default MenuModal;
+export default Modal;
