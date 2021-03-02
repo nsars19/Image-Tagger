@@ -39,7 +39,7 @@ const StyledLevels = styled.div`
   @media (max-width: 767.99px) {
     & {
       grid-template-rows: repeat(auto-fit, minmax(1fr, 150px));
-      width: 95%;
+      width: 98%;
     }
   }
   @media (min-width: 768px) {
