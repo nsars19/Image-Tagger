@@ -28,6 +28,33 @@ function App() {
 
   const toggleModal = () => setModal(!showModal);
 
+  const checkGuess = ({ targetName, coords }) => {
+    if (!targetName) return;
+
+    const height = document.getElementById(currentImage.id).height;
+    const width = document.getElementById(currentImage.id).width;
+
+    // Guessed coordinates
+    const [x, y] = coords;
+
+    // Character location represented as a percentage of the width/height of the image
+    const [xMinPc, xMaxPc] = locations[targetName].x;
+    const [yMinPc, yMaxPc] = locations[targetName].y;
+
+    // Convert percentage ranges to pixel values
+    const [xMin, xMax] = [xMinPc, xMaxPc].map((pct) => pct * width);
+    const [yMin, yMax] = [yMinPc, yMaxPc].map((pct) => pct * height);
+
+    console.log(x, y, { xMin, xMax, yMin, yMax });
+    if (xMin <= x && x <= xMax && yMin <= y && y <= yMax) {
+      // If good guess add the character to the found characters collection
+      // unless it has already been added
+      if (!foundChars.includes(targetName)) {
+        setFoundChars(foundChars.concat(targetName));
+      }
+    }
+  };
+
   const handleClick = (e) => {
     console.log(e.target);
     setCursorPosition([e.clientX, e.clientY]);
