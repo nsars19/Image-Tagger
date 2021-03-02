@@ -25,6 +25,22 @@ const images = [
 function App() {
   const [showModal, setModal] = useState(false);
   const [cursorPosition, setCursorPosition] = useState([0, 0]);
+  const [currentImage, setCurrentImage] = useState(images[0]);
+  const [foundChars, setFoundChars] = useState([]);
+  let locations = {
+    Waldo: {
+      x: [0.407, 0.432],
+      y: [0.164, 0.218],
+    },
+    Odlaw: {
+      x: [0.123, 0.182],
+      y: [0.122, 0.321],
+    },
+    Wizard: {
+      x: [0.613, 0.825],
+      y: [0.718, 0.888],
+    },
+  };
 
   const toggleModal = () => setModal(!showModal);
 
