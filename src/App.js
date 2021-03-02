@@ -52,7 +52,8 @@ function App() {
         foundChars={foundChars}
       />
       <Image
-        src={images[0].src}
+        src={currentImage.src}
+        id={currentImage.id}
         alt="where's waldo?"
         handleClick={handleClick}
       />
