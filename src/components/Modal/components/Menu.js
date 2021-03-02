@@ -7,6 +7,7 @@ const StyledMenu = styled.div`
   font-family: Arial, Courier;
   letter-spacing: 1px;
   border-radius: 0 8px 8px 8px;
+  user-select: none;
 
   & > div {
     padding: 8px 10px;
