@@ -48,6 +48,8 @@ function App() {
         showModal={showModal}
         toggleModal={toggleModal}
         cursorPosition={cursorPosition}
+        checkGuess={checkGuess}
+        foundChars={foundChars}
       />
       <Image
         src={images[0].src}
