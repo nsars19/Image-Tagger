@@ -6,7 +6,6 @@ const StyledMenu = styled.div`
   color: #${(props) => props.colors.darkBlue};
   font-family: Arial, Courier;
   letter-spacing: 1px;
-  // border-radius: 0 8px 8px 8px;
   border-radius: ${({ x, width }) => {
     return width - x < 162 ? "8px 0 0 8px" : "0 8px 8px 8px";
   }};
@@ -19,11 +18,6 @@ const StyledMenu = styled.div`
     justify-content: space-between;
     align-items: flex-end;
   }
-
-  & div:first-child {
-    border-radius: 0 5px 0 0;
-  }
-
   & div:last-child {
     border-bottom: none;
   }
