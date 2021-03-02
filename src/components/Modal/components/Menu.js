@@ -10,6 +10,7 @@ const StyledMenu = styled.div`
     return width - x < 162 ? "8px 0 8px 8px" : "0 8px 8px 8px";
   }};
   user-select: none;
+  box-shadow: 0px 0px 1px #${({ colors }) => colors.gray};
 
   & > div {
     padding: 8px 10px;
