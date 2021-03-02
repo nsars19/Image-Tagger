@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const StyledMenu = styled.div`
   border: 3px solid #${(props) => props.colors.cream};
-  background: #${(props) => (props.found ? props.colors.darkBlue : props.colors.cream)};
+  background: #${({ colors }) => colors.cream};
   color: #${(props) => props.colors.darkBlue};
   font-family: Arial, Courier;
   letter-spacing: 1px;
