@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Modal from "./components/Modal/Modal";
+import wave from "./assets/wave.png";
 import waldo1 from "./assets/waldo1.jpeg";
 import waldo2 from "./assets/waldo2.jpeg";
 import waldo3 from "./assets/waldo3.jpeg";
