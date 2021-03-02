@@ -13,6 +13,12 @@ const StyledModal = styled.div`
   left: ${(props) => props.x - 32}px;
 `;
 
+const characters = [
+  { name: "Waldo", src: waldo, id: 1 },
+  { name: "Odlaw", src: odlaw, id: 2 },
+  { name: "Wizard", src: wiz, id: 3 },
+];
+
 const Modal = ({ showModal, toggleModal, cursorPosition, colors }) => {
   const [x, y] = cursorPosition;
 
@@ -23,20 +29,24 @@ const Modal = ({ showModal, toggleModal, cursorPosition, colors }) => {
       x={x}
       y={y}
     >
-      <Target onClick={toggleModal} colors={colors} />
-      <Menu colors={colors} toggleModal={toggleModal}>
-        <div>
-          <img src={waldo} alt={"Waldo"} />
-          <p>Waldo</p>
-        </div>
-        <div>
-          <img src={odlaw} alt={"Odlaw"} />
-          <p>Odlaw</p>
-        </div>
-        <div>
-          <img src={wiz} alt={"Wizard"} />
-          <p>Wizard</p>
-        </div>
+      <Target
+        onClick={toggleModal}
+        colors={colors}
+        cursorPosition={cursorPosition}
+      />
+      <Menu
+        colors={colors}
+        toggleModal={toggleModal}
+        cursorPosition={cursorPosition}
+      >
+        {characters.map(({ name, src, id }) => {
+          return (
+            <div id={name} key={id}>
+              <img src={src} alt={name} />
+              <p>{name}</p>
+            </div>
+          );
+        })}
       </Menu>
     </StyledModal>
   );
