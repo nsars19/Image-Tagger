@@ -6,6 +6,7 @@ import waldo3 from "./assets/waldo3.jpeg";
 import waldo4 from "./assets/waldo4.jpeg";
 import Navbar from "./components/Navbar/Navbar";
 import Image from "./components/Image/Image";
+import Levels from "./components/Levels/Levels";
 
 const colors = {
   cream: "f9f7f7",
@@ -24,7 +25,7 @@ const images = [
 function App() {
   const [showModal, setModal] = useState(false);
   const [cursorPosition, setCursorPosition] = useState([0, 0]);
-  const [currentImage, setCurrentImage] = useState(images[0]);
+  const [currentImage, setCurrentImage] = useState(null);
   const [foundChars, setFoundChars] = useState([]);
   let locations = {
     Waldo: {
@@ -90,29 +91,44 @@ function App() {
     toggleModal();
   };
 
-  return (
-    <>
-      <Navbar colors={colors}>
-        <span>Restart</span>
-        <span>Levels</span>
-        <span>Highscores</span>
-      </Navbar>
-      <Modal
-        colors={colors}
-        showModal={showModal}
-        toggleModal={toggleModal}
-        cursorPosition={cursorPosition}
-        checkGuess={checkGuess}
-        foundChars={foundChars}
-      />
-      <Image
-        src={currentImage.src}
-        id={currentImage.id}
-        alt="where's waldo?"
-        handleClick={handleClick}
-      />
-    </>
-  );
+  if (currentImage) {
+    return (
+      <>
+        <Navbar colors={colors}>
+          <span>Restart</span>
+          <span>Levels</span>
+          <span>Highscores</span>
+        </Navbar>
+        <Modal
+          colors={colors}
+          showModal={showModal}
+          toggleModal={toggleModal}
+          cursorPosition={cursorPosition}
+          checkGuess={checkGuess}
+          foundChars={foundChars}
+        />
+        <Image
+          src={currentImage.src}
+          id={currentImage.id}
+          alt="where's waldo?"
+          handleClick={handleClick}
+        />
+      </>
+    );
+  } else {
+    return (
+      <>
+        <Navbar colors={colors}>
+          <span>Highscores</span>
+        </Navbar>
+        <Levels
+          images={images}
+          setCurrentImage={setCurrentImage}
+          colors={colors}
+        />
+      </>
+    );
+  }
 }
 
 export default App;
