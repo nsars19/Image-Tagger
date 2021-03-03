@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import styled from "styled-components";
 
 const StyledMenu = styled.div`
@@ -48,14 +49,16 @@ const StyledMenu = styled.div`
   }
 `;
 
-function Menu({
-  children,
-  colors,
-  toggleModal,
-  cursorPosition,
-  checkGuess,
-  foundChars,
-}) {
+function Menu(props) {
+  const {
+    children,
+    colors,
+    toggleModal,
+    cursorPosition,
+    checkGuess,
+    foundChars,
+  } = props;
+
   useEffect(() => {
     for (let charName of foundChars) {
       const menuElem = document.getElementById(charName);
