@@ -22,26 +22,32 @@ const images = [
   { id: 4, src: waldo4 },
 ];
 
+let locations = {
+  id: 1,
+  Waldo: {
+    x: [0.407, 0.432],
+    y: [0.164, 0.218],
+  },
+  Odlaw: {
+    x: [0.123, 0.182],
+    y: [0.122, 0.321],
+  },
+  Wizard: {
+    x: [0.613, 0.825],
+    y: [0.718, 0.888],
+  },
+};
+
 function App() {
   const [showModal, setModal] = useState(false);
   const [cursorPosition, setCursorPosition] = useState([0, 0]);
   const [currentImage, setCurrentImage] = useState(null);
   const [foundChars, setFoundChars] = useState([]);
-  let locations = {
-    Waldo: {
-      x: [0.407, 0.432],
-      y: [0.164, 0.218],
-    },
-    Odlaw: {
-      x: [0.123, 0.182],
-      y: [0.122, 0.321],
-    },
-    Wizard: {
-      x: [0.613, 0.825],
-      y: [0.718, 0.888],
-    },
-  };
+  const [charLocations, setLocations] = useState(null);
 
+  // Get character location data when an image is selected
+  // Initialize a ref object to hold value of the data
+  const locationInfo = useRef(null);
   useEffect(() => {
     // Get locations of characters by percentage
     // const res = await fetch(api)
