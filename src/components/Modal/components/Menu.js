@@ -56,6 +56,15 @@ function Menu({
   checkGuess,
   foundChars,
 }) {
+  useEffect(() => {
+    for (let charName of foundChars) {
+      const menuElem = document.getElementById(charName);
+      menuElem.style.background = `#${colors.gray}88`;
+      menuElem.style.color = `#${colors.gray}`;
+      menuElem.style.filter = "grayscale(70%)";
+    }
+  }, [foundChars, colors.gray]);
+
   const [x, y] = cursorPosition;
   const coords = [x, y - 60];
 
