@@ -49,9 +49,13 @@ function App() {
   // Initialize a ref object to hold value of the data
   const locationInfo = useRef(null);
   useEffect(() => {
-    // Get locations of characters by percentage
-    // const res = await fetch(api)
-    // const data = await res.json()
+    const fetchData = async () => {
+      // assign current property the value of the returned promise
+      locationInfo.current = await Promise.resolve(locations); // <-- Will be an API call
+    };
+    // Call the function and then set the data in state
+    fetchData();
+    setLocations(locationInfo.current);
   }, [currentImage]);
 
   useEffect(() => {
