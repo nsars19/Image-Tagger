@@ -79,8 +79,8 @@ function App() {
     const [x, y] = coords;
 
     // Character location represented as a percentage of the width/height of the image
-    const [xMinPc, xMaxPc] = locations[targetName].x;
-    const [yMinPc, yMaxPc] = locations[targetName].y;
+    const [xMinPc, xMaxPc] = charLocations[targetName].x;
+    const [yMinPc, yMaxPc] = charLocations[targetName].y;
 
     // Convert percentage ranges to pixel values
     const [xMin, xMax] = [xMinPc, xMaxPc].map((pct) => pct * width);
