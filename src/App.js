@@ -86,7 +86,6 @@ function App() {
     const [xMin, xMax] = [xMinPc, xMaxPc].map((pct) => pct * width);
     const [yMin, yMax] = [yMinPc, yMaxPc].map((pct) => pct * height);
 
-    console.log(x, y, { xMin, xMax, yMin, yMax });
     if (xMin <= x && x <= xMax && yMin <= y && y <= yMax) {
       // If good guess add the character to the found characters collection
       // unless it has already been added
