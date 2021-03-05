@@ -79,8 +79,9 @@ function App() {
   const checkGuess = ({ targetName, coords }) => {
     if (!targetName) return;
 
-    const height = document.getElementById(currentImage.id).height;
-    const width = document.getElementById(currentImage.id).width;
+    const image = document.getElementById(imageID);
+    const height = image.height;
+    const width = image.width;
 
     // Guessed coordinates
     const [x, y] = coords;
