@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Modal from "./components/Modal/Modal";
 import waldo1 from "./assets/waldo1.jpeg";
 import waldo2 from "./assets/waldo2.jpeg";
