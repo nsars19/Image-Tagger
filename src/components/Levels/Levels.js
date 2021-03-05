@@ -46,6 +46,12 @@ const StyledLevels = styled.div`
     & {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
+    div:nth-child(2) {
+      margin-top: 25px;
+    }
+    div:nth-child(5) {
+      margin-bottom: 15px;
+    }
   }
   @media (min-width: 1024px) {
     & {
@@ -60,12 +66,6 @@ const StyledLevels = styled.div`
   @media (min-width: 1700px) {
     & {
       width: 65%;
-    }
-    div:nth-child(2) {
-      margin-top: 25px;
-    }
-    div:nth-child(3) {
-      margin-bottom: 15px;
     }
   }
 `;
