@@ -115,6 +115,7 @@ function App() {
           cursorPosition={cursorPosition}
           checkGuess={checkGuess}
           foundChars={foundChars}
+          charLocations={charLocations}
         />
         <Image
           src={currentImage.src}
