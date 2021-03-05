@@ -48,6 +48,7 @@ function App() {
   const [currentImage, setCurrentImage] = useState(null);
   const [foundChars, setFoundChars] = useState([]);
   const [charLocations, setLocations] = useState(null);
+  const [imageID, setImageID] = useState(null);
 
   // Get character location data when an image is selected
   // Initialize a ref object to hold value of the data
@@ -138,6 +139,7 @@ function App() {
         <Levels
           images={images}
           setCurrentImage={setCurrentImage}
+          setImageID={setImageID}
           colors={colors}
         />
       </>
