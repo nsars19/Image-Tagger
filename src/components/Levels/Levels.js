@@ -70,11 +70,17 @@ const StyledLevels = styled.div`
   }
 `;
 
-const Levels = ({ setCurrentImage, images, colors }) => {
+const Levels = ({ setCurrentImage, setImageID, images, colors }) => {
   return (
     <StyledLevels colors={colors}>
       {images.map((img) => (
-        <div key={img.id} onClick={() => setCurrentImage(img)}>
+        <div
+          key={img.id}
+          onClick={() => {
+            setCurrentImage(img);
+            setImageID(img.id);
+          }}
+        >
           <img src={img.src} alt={"Where's Waldo?"} />
           <h3>Level {img.id}</h3>
         </div>
