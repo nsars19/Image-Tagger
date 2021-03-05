@@ -14,11 +14,55 @@ const StyledModal = styled.div`
   left: ${({ width, x }) => (width - x < 162 ? x - 143 : x - 32)}px;
 `;
 
-const characters = [
-  { name: "Waldo", src: waldo, id: 1 },
-  { name: "Odlaw", src: odlaw, id: 2 },
-  { name: "Wizard", src: wiz, id: 3 },
-];
+const charImages = {
+  Waldo: {
+    src: waldo,
+    name: "Waldo",
+    id: 1,
+  },
+  Odlaw: {
+    src: odlaw,
+    name: "Odlaw",
+    id: 2,
+  },
+  Wenda: {
+    src: wenda,
+    name: "Wenda",
+    id: 3,
+  },
+  Wizard: {
+    src: wiz,
+    name: "Wizard",
+    id: 4,
+  },
+};
+
+const mergeCharacterObjects = (charObj, mergeObj) => {
+  const newObj = {};
+
+  for (let charName in charObj) {
+    if (charName === "id") {
+      // Assign id to new object, but prevent following code from
+      // being executed for the `id` property
+      newObj.id = charObj[charName];
+      continue;
+    }
+
+    newObj[charName] = charObj[charName];
+
+    // Set new object character info equal to original object character info
+    for (let info in charObj[charName]) {
+      newObj[charName][info] = charObj[charName][info];
+
+      // Merge new properties into the new object
+      for (let newProp in mergeObj[charName]) {
+        newObj[charName][newProp] = mergeObj[charName][newProp];
+      }
+    }
+  }
+
+  return newObj;
+};
 
 const Modal = ({
   showModal,
