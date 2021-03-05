@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import Modal from "./components/Modal/Modal";
 import waldo1 from "./assets/waldo1.jpeg";
 import waldo2 from "./assets/waldo2.jpeg";
@@ -49,27 +49,46 @@ function App() {
   const [foundChars, setFoundChars] = useState([]);
   const [charLocations, setLocations] = useState(null);
   const [imageID, setImageID] = useState(null);
+  const [startTime, setStartTime] = useState(Date.now());
 
   // Get character location data when an image is selected
   // Initialize a ref object to hold value of the data
-  const locationInfo = useRef(null);
+  // const locationInfo = useRef(null);
   useEffect(() => {
-    const fetchData = async () => {
-      // if (!currentImage) return;
+    (async function fetchData() {
       // assign current property the value of the returned promise
       // locationInfo.current = await Promise.resolve(locations); // <-- Will be an API call
       const res = await fetch(`http://localhost:3000/levels/${imageID}`);
       const data = await res.json();
-      locationInfo.current = data;
-      setLocations(locationInfo.current);
-    };
-    // Call the function and then set the data in state
-    fetchData();
+      setLocations(data);
+    })();
   }, [currentImage, imageID]);
 
   useEffect(() => {
-    if (foundChars.length === 3) {
+    if (foundChars.length === 0) return;
+
+    const chars = [];
+    for (let charName in charLocations) {
+      if (charName === "id") continue;
+
+      chars.push(charName);
+    }
+
+    if (foundChars.length === chars.length) {
       // Stop Timer when all are found
+      console.log("they're equal");
+      console.log("Finished in: ", (Date.now() - startTime) / 1000);
+      setFoundChars([]);
+
+      (async function postScore() {
+        const time = (Date.now() - startTime) / 1000;
+        const name = "nick";
+        const url = "http://localhost:3000/highscores";
+        const params = `?name=${name}&time=${time}&level_id=${imageID}`;
+        const fullUrl = url + params;
+        const res = await fetch(fullUrl, { method: "post" });
+        console.log(res);
+      })();
     }
     return;
   }, [foundChars]);
