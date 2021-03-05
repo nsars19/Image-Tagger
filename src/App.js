@@ -55,22 +55,24 @@ function App() {
   const locationInfo = useRef(null);
   useEffect(() => {
     const fetchData = async () => {
+      // if (!currentImage) return;
       // assign current property the value of the returned promise
-      locationInfo.current = await Promise.resolve(locations); // <-- Will be an API call
+      // locationInfo.current = await Promise.resolve(locations); // <-- Will be an API call
+      const res = await fetch(`http://localhost:3000/levels/${imageID}`);
+      const data = await res.json();
+      locationInfo.current = data;
+      setLocations(locationInfo.current);
     };
     // Call the function and then set the data in state
     fetchData();
-    setLocations(locationInfo.current);
-  }, [currentImage]);
+  }, [currentImage, imageID]);
 
   useEffect(() => {
-    for (let charName of foundChars) {
-      const menuElem = document.getElementById(charName);
-      menuElem.style.background = `#${colors.gray}88`;
-      menuElem.style.color = `#${colors.gray}`;
-      menuElem.style.filter = "grayscale(70%)";
+    if (foundChars.length === 3) {
+      // Stop Timer when all are found
     }
-  });
+    return;
+  }, [foundChars]);
 
   const toggleModal = () => setModal(!showModal);
 
