@@ -72,8 +72,10 @@ const Modal = ({
   colors,
   checkGuess,
   foundChars,
+  charLocations,
 }) => {
   const [x, y] = cursorPosition;
+  const charInfo = mergeCharacterObjects(charLocations, charImages);
 
   return (
     <StyledModal
@@ -95,13 +97,23 @@ const Modal = ({
         checkGuess={checkGuess}
         foundChars={foundChars}
       >
-        {characters.map(({ name, src, id }) => {
-          return (
-            <div id={name} key={id}>
-              <img src={src} alt={name} />
-              <p>{name}</p>
-            </div>
-          );
+        {[charInfo].map((obj) => {
+          const elemArr = [];
+
+          for (let prop in obj) {
+            if (prop === "id") continue;
+
+            const { name, id, src } = obj[prop];
+
+            elemArr.push(
+              <div id={name} key={id}>
+                <img src={src} alt={name} />
+                <p>{name}</p>
+              </div>
+            );
+          }
+
+          return elemArr;
         })}
       </Menu>
     </StyledModal>
