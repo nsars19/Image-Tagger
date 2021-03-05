@@ -49,16 +49,12 @@ const mergeCharacterObjects = (charObj, mergeObj) => {
       continue;
     }
 
+    // Set new object character info equal to original object character info
     newObj[charName] = charObj[charName];
 
-    // Set new object character info equal to original object character info
-    for (let info in charObj[charName]) {
-      newObj[charName][info] = charObj[charName][info];
-
-      // Merge new properties into the new object
-      for (let newProp in mergeObj[charName]) {
-        newObj[charName][newProp] = mergeObj[charName][newProp];
-      }
+    // Merge new properties into the new object eg. 'src', 'name', 'id'
+    for (let newProp in mergeObj[charName]) {
+      newObj[charName][newProp] = mergeObj[charName][newProp];
     }
   }
 
