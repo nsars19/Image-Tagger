@@ -4,6 +4,8 @@ import waldo1 from "./assets/waldo1.jpeg";
 import waldo2 from "./assets/waldo2.jpeg";
 import waldo3 from "./assets/waldo3.jpeg";
 import waldo4 from "./assets/waldo4.jpeg";
+import waldo5 from "./assets/waldo5.jpg";
+import waldo6 from "./assets/waldo6.jpg";
 import Navbar from "./components/Navbar/Navbar";
 import Image from "./components/Image/Image";
 import Levels from "./components/Levels/Levels";
@@ -20,6 +22,8 @@ const images = [
   { id: 2, src: waldo2 },
   { id: 3, src: waldo3 },
   { id: 4, src: waldo4 },
+  { id: 5, src: waldo5 },
+  { id: 6, src: waldo6 },
 ];
 
 let locations = {
