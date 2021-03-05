@@ -16,6 +16,7 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     background: #f9f7f7;
+    overflow-x: hidden;
   }
 `;
 
