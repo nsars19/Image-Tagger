@@ -124,7 +124,25 @@ function App() {
     toggleModal();
   };
 
-  if (currentImage) {
+  if (gameOver) {
+    return (
+      <>
+        <Navbar colors={colors}>
+          <span>Restart</span>
+          <span>Levels</span>
+        </Navbar>
+        <Levels
+          images={images}
+          setCurrentImage={setCurrentImage}
+          setImageID={setImageID}
+          colors={colors}
+          imageID={imageID}
+          highScoreStyle
+        />
+        <HighScore imageID={imageID} colors={colors} />
+      </>
+    );
+  } else if (currentImage) {
     return (
       <>
         <Navbar colors={colors}>
