@@ -12,14 +12,15 @@ const StyledLevels = styled.div`
     display: flex;
     flex-direction: column;
     cursor: pointer;
+    // background: ${({ hs, colors }) => (hs ? "#" + colors.gray : "inherit")};
   }
 
   div:first-child {
-    margin-top: 25px;
+    ${({ hs }) => (hs ? "margin-top: 15px" : "margin-top: 25px")};
   }
 
   div:last-child {
-    margin-bottom: 15px;
+    ${({ hs }) => (hs ? "margin-bottom: 0px" : "margin-bottom: 15px")};
   }
 
   div:hover,
@@ -47,10 +48,10 @@ const StyledLevels = styled.div`
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
     div:nth-child(2) {
-      margin-top: 25px;
+      ${({ hs }) => (hs ? "margin-top: 15px" : "margin-top: 25px")};
     }
     div:nth-child(5) {
-      margin-bottom: 15px;
+      ${({ hs }) => (hs ? "margin-bottom: 0px" : "margin-bottom: 15px")};
     }
   }
   @media (min-width: 1024px) {
@@ -70,15 +71,40 @@ const StyledLevels = styled.div`
   }
 `;
 
-const Levels = ({ setCurrentImage, setImageID, images, colors }) => {
+const Levels = (props) => {
+  const {
+    setCurrentImage,
+    setImageID,
+    images,
+    colors,
+    highScoreStyle,
+    imageID,
+  } = props;
+
   return (
-    <StyledLevels colors={colors}>
-      {images.map((img) => (
+    <StyledLevels
+      colors={colors}
+      hs={highScoreStyle}
+      style={
+        highScoreStyle
+          ? {
+              display: "grid",
+              gridTemplateColumns: "repeat(3, minmax(0px, 1fr)",
+            }
+          : {}
+      }
+    >
+      {images.map((img, idx) => (
         <div
           key={img.id}
           onClick={() => {
             setCurrentImage(img);
             setImageID(img.id);
+          }}
+          style={{
+            backgroundColor:
+              imageID === idx + 1 ? "#" + colors.lightBlue : "inherit",
+            color: imageID === idx + 1 ? "#" + colors.cream : "inherit",
           }}
         >
           <img src={img.src} alt={"Where's Waldo?"} />
