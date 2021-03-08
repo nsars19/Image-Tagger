@@ -42,17 +42,36 @@ const StyledForm = styled.div`
   }
 `;
 
-function Form({ colors, toggleDisplay, displayForm, gameTime }) {
+function Form(props) {
+  const {
+    colors,
+    toggleDisplay,
+    displayForm,
+    gameTime,
+    imageID,
+    setGameOver,
+  } = props;
+
+  const handleSubmit = async (e) => {
+    const name = "nick";
+    const url = "http://localhost:3000/highscores";
+    const params = `?name=${name}&time=${gameTime}&level_id=${imageID}`;
+    const fullUrl = url + params;
+    const res = await fetch(fullUrl, { method: "post" });
+    setGameOver(true);
+    toggleDisplay(!displayForm);
+  };
+
   return (
-    <StyledForm
-      colors={colors}
-      onClick={toggleDisplay}
-      displayForm={displayForm}
-    >
+    <StyledForm colors={colors} displayForm={displayForm}>
       <div>
         <p>You finished in {gameTime}s</p>
-        <input type={"text"} placeholder={"your name here"} />
-        <input type={"submit"} value={"Submit your score!"} />
+        <input type={"text"} placeholder={"your name here"} min={2} max={24} />
+        <input
+          type={"submit"}
+          value={"Submit your score!"}
+          onClick={handleSubmit}
+        />
       </div>
     </StyledForm>
   );
