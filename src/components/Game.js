@@ -22,8 +22,6 @@ function Game(props) {
 
     if (foundChars.length === chars.length) {
       // Stop Timer when all are found
-      console.log("they're equal");
-      console.log("Finished in: ", (Date.now() - startTime) / 1000);
 
       setFormModal(!showFormModal);
       setGameTime((Date.now() - startTime) / 1000);
