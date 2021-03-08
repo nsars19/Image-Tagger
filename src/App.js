@@ -160,6 +160,7 @@ function App() {
           charLocations={charLocations}
         />
         <Image
+          setStartTime={setStartTime}
           setLocations={setLocations}
           imageID={imageID}
           currentImage={currentImage}
