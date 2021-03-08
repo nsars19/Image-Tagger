@@ -44,6 +44,7 @@ let locations = {
 
 function App() {
   const [showModal, setModal] = useState(false);
+  const [showFormModal, setFormModal] = useState(false);
   const [cursorPosition, setCursorPosition] = useState([0, 0]);
   const [currentImage, setCurrentImage] = useState(null);
   const [foundChars, setFoundChars] = useState([]);
@@ -168,6 +169,14 @@ function App() {
           id={currentImage.id}
           alt="where's waldo?"
           handleClick={handleClick}
+        />
+        <Form
+          colors={colors}
+          toggleDisplay={() => setFormModal(!showFormModal)}
+          displayForm={showFormModal}
+          gameTime={gameTime}
+          imageID={imageID}
+          setGameOver={setGameOver}
         />
       </>
     );
