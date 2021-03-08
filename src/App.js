@@ -51,9 +51,6 @@ function App() {
   const [imageID, setImageID] = useState(null);
   const [startTime, setStartTime] = useState(Date.now());
 
-  // Get character location data when an image is selected
-  // Initialize a ref object to hold value of the data
-  // const locationInfo = useRef(null);
   useEffect(() => {
     (async function fetchData() {
       // assign current property the value of the returned promise
@@ -145,6 +142,9 @@ function App() {
           charLocations={charLocations}
         />
         <Image
+          setLocations={setLocations}
+          imageID={imageID}
+          currentImage={currentImage}
           src={currentImage.src}
           id={currentImage.id}
           alt="where's waldo?"
