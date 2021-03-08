@@ -17,6 +17,7 @@ const Image = (props) => {
     currentImage,
     imageID,
     setLocations,
+    setStartTime,
   } = props;
   // Get character location data when an image is selected
   // Initialize a ref object to hold value of the data
@@ -30,6 +31,10 @@ const Image = (props) => {
       setLocations(data);
     })();
   }, [currentImage, imageID]);
+
+  useEffect(() => {
+    setStartTime(Date.now());
+  }, [setStartTime]);
 
   return <StyledImage src={src} alt={alt} onClick={handleClick} id={id} />;
 };
