@@ -57,7 +57,7 @@ function Form(props) {
     const url = "http://localhost:3000/highscores";
     const params = `?name=${name}&time=${gameTime}&level_id=${imageID}`;
     const fullUrl = url + params;
-    const res = await fetch(fullUrl, { method: "post" });
+    await fetch(fullUrl, { method: "post" });
     setGameOver(true);
     toggleDisplay(!displayForm);
   };
