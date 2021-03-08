@@ -43,14 +43,7 @@ const StyledForm = styled.div`
 `;
 
 function Form(props) {
-  const {
-    colors,
-    toggleDisplay,
-    displayForm,
-    gameTime,
-    imageID,
-    setGameOver,
-  } = props;
+  const { colors, displayForm, gameTime, imageID, setGameOver } = props;
 
   const handleSubmit = async (e) => {
     const name = "nick";
@@ -59,7 +52,6 @@ function Form(props) {
     const fullUrl = url + params;
     await fetch(fullUrl, { method: "post" });
     setGameOver(true);
-    toggleDisplay(!displayForm);
   };
 
   return (
