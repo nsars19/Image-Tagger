@@ -9,6 +9,8 @@ import waldo6 from "./assets/waldo6.jpg";
 import Navbar from "./components/Navbar/Navbar";
 import Image from "./components/Image/Image";
 import Levels from "./components/Levels/Levels";
+import Form from "./components/Form/Form";
+import HighScore from "./components/HighScore/HighScore";
 
 const colors = {
   cream: "f9f7f7",
