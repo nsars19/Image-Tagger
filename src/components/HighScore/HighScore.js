@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { useEffect, useState } from "react";
 import uniqid from "uniqid";
+import Loading from "./Loading/Loading";
 
 const StyledHighScore = styled.div`
   font-size: 18px;
