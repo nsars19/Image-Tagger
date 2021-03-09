@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.js": "/Image-Tagger/static/js/main.e5bb94c7.chunk.js",
+    "main.js.map": "/Image-Tagger/static/js/main.e5bb94c7.chunk.js.map",
+    "runtime-main.js": "/Image-Tagger/static/js/runtime-main.12435553.js",
+    "runtime-main.js.map": "/Image-Tagger/static/js/runtime-main.12435553.js.map",
+    "static/css/2.a1596f27.chunk.css": "/Image-Tagger/static/css/2.a1596f27.chunk.css",
+    "static/js/2.d858a418.chunk.js": "/Image-Tagger/static/js/2.d858a418.chunk.js",
+    "static/js/2.d858a418.chunk.js.map": "/Image-Tagger/static/js/2.d858a418.chunk.js.map",
+    "index.html": "/Image-Tagger/index.html",
+    "static/css/2.a1596f27.chunk.css.map": "/Image-Tagger/static/css/2.a1596f27.chunk.css.map",
+    "static/js/2.d858a418.chunk.js.LICENSE.txt": "/Image-Tagger/static/js/2.d858a418.chunk.js.LICENSE.txt",
+    "static/media/waldo.44fc792e.png": "/Image-Tagger/static/media/waldo.44fc792e.png",
+    "static/media/waldo1.e1c596bd.jpeg": "/Image-Tagger/static/media/waldo1.e1c596bd.jpeg",
+    "static/media/waldo2.0ad5f375.jpeg": "/Image-Tagger/static/media/waldo2.0ad5f375.jpeg",
+    "static/media/waldo3.0de8050f.jpeg": "/Image-Tagger/static/media/waldo3.0de8050f.jpeg",
+    "static/media/waldo4.b1c8e076.jpeg": "/Image-Tagger/static/media/waldo4.b1c8e076.jpeg",
+    "static/media/waldo5.0db1e33f.jpg": "/Image-Tagger/static/media/waldo5.0db1e33f.jpg",
+    "static/media/waldo6.7a453caa.jpg": "/Image-Tagger/static/media/waldo6.7a453caa.jpg",
+    "static/media/wave.c4bb2e0b.png": "/Image-Tagger/static/media/wave.c4bb2e0b.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.12435553.js",
+    "static/css/2.a1596f27.chunk.css",
+    "static/js/2.d858a418.chunk.js",
+    "static/js/main.e5bb94c7.chunk.js"
+  ]
+}
