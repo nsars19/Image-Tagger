@@ -24,8 +24,6 @@ const Image = (props) => {
   // const locationInfo = useRef(null);
   useEffect(() => {
     (async function fetchData() {
-      // assign current property the value of the returned promise
-      // locationInfo.current = await Promise.resolve(locations); // <-- Will be an API call
       const res = await fetch(`http://localhost:3000/levels/${imageID}`);
       const data = await res.json();
       setLocations(data);
