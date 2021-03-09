@@ -58,6 +58,7 @@ function App() {
         images={images}
         setCurrentImage={setCurrentImage}
         setImageID={setImageID}
+        setGameOver={setGameOver}
       />
     );
   }

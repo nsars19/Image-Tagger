@@ -15,8 +15,15 @@ function Scores(props) {
   return (
     <>
       <Navbar colors={colors}>
-        <span>Restart</span>
-        <span>Levels</span>
+        <span
+          onClick={() => {
+            setCurrentImage(null);
+            setImageID(null);
+            setGameOver(false);
+          }}
+        >
+          Levels
+        </span>
       </Navbar>
       <Levels
         images={images}

@@ -65,9 +65,13 @@ function Game(props) {
   return (
     <>
       <Navbar colors={colors}>
-        <span>Restart</span>
-        <span>Levels</span>
-        <span>Highscores</span>
+        <span
+          onClick={() => {
+            setGameOver(true);
+          }}
+        >
+          Highscores
+        </span>
       </Navbar>
       <Modal
         colors={colors}
