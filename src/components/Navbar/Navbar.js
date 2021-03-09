@@ -37,7 +37,7 @@ const StyledNavbar = styled.nav`
     }
   }
 
-  a img {
+  img {
     height: 50px;
     position: absolute;
     left: 0;
@@ -55,9 +55,7 @@ const StyledNavbar = styled.nav`
 const Navbar = ({ children, colors }) => {
   return (
     <StyledNavbar colors={colors}>
-      <a href="localhost:3000">
-        <img src={wave} alt="Waldo" />
-      </a>
+      <img src={wave} alt="Waldo" />
       {children}
     </StyledNavbar>
   );
