@@ -38,6 +38,7 @@ function App() {
         setCurrentImage={setCurrentImage}
         setImageID={setImageID}
         imageID={imageID}
+        setGameOver={setGameOver}
         highScoreStyle
       />
     );
