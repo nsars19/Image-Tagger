@@ -4,17 +4,20 @@ const StyledForm = styled.div`
   display: ${({ displayForm }) => (displayForm ? "flex" : "none")};
   flex-direction: column;
   padding: 20px;
-  background: #${({ colors }) => colors.darkBlue};
-  color: #${({ colors }) => colors.gray};
+  border-radius: 5px;
+  background: #${({ colors }) => colors.lightBlue};
+  color: #${({ colors }) => colors.cream};
+  width: 350px;
   position: absolute;
-  top: 200px;
-  left: calc(50% - 114px);
+  top: 30vh;
+  left: calc(50% - 175px);
 
   div {
     display: flex;
     flex-direction: column;
   }
   div input[type="text"] {
+    font-size: 14px;
     height: 35px;
     padding: 5px;
     border-style: none;
@@ -29,10 +32,11 @@ const StyledForm = styled.div`
     border-radius: 4px;
     font-size: 14px;
     font-weight: 600;
+    background: #${({ colors }) => colors.gray};
 
     &:hover {
       transition: background 0.05s ease, color 0.05s ease;
-      background: #${({ colors }) => colors.lightBlue};
+      background: #${({ colors }) => colors.darkBlue};
       color: #${({ colors }) => colors.cream};
     }
   }
