@@ -31,9 +31,8 @@ const StyledForm = styled.div`
     background: #${({ colors }) => colors.gray};
 
     &:hover {
-      transition: background 0.05s ease, color 0.05s ease;
-      background: #${({ colors }) => colors.darkBlue};
-      color: #${({ colors }) => colors.cream};
+      transition: background 0.05s ease;
+      background: #${({ colors }) => colors.gray}cc;
     }
   }
 
