@@ -12,7 +12,6 @@ const StyledLevels = styled.div`
     display: flex;
     flex-direction: column;
     cursor: pointer;
-    // background: ${({ hs, colors }) => (hs ? "#" + colors.gray : "inherit")};
   }
 
   div:first-child {
