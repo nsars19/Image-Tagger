@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import "animate.css";
 
 const StyledLoading = styled.div`
   height: calc(100vh - 60px);

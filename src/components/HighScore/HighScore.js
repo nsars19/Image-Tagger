@@ -107,7 +107,7 @@ const HighScore = ({ imageID, colors, setGameOver }) => {
       </StyledHighScore>
     );
   } else {
-    return <h1>LOADING</h1>;
+    return <Loading colors={colors} />;
   }
 };
 
