@@ -46,6 +46,9 @@ const StyledLevels = styled.div`
       grid-template-rows: repeat(auto-fit, minmax(1fr, 150px));
       width: 98%;
     }
+    .level-icon {
+      font-size: 14px;
+    }
   }
   @media (min-width: 768px) {
     & {
