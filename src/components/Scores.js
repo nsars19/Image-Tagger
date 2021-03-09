@@ -19,7 +19,7 @@ function Scores(props) {
         imageID={imageID}
         highScoreStyle
       />
-      <HighScore imageID={imageID} colors={colors} />
+      <HighScore imageID={imageID} colors={colors} setGameOver={setGameOver} />
     </>
   );
 }

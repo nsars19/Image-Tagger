@@ -58,9 +58,22 @@ const StyledHighScore = styled.div`
     border-radius: 0 0 5px 5px;
     border-bottom: 1px solid #${({ colors }) => colors.gray};
   }
+
+  .replay {
+    padding: 12px;
+    border-radius: 6px;
+    margin-right: 5px;
+    background: #${({ colors }) => colors.gray};
+
+    &:hover {
+      transition: background 0.03s ease, color 0.03s ease;
+      background: #${({ colors }) => colors.lightBlue};
+      color: #${({ colors }) => colors.cream};
+    }
+  }
 `;
 
-const HighScore = ({ imageID, colors }) => {
+const HighScore = ({ imageID, colors, setGameOver }) => {
   const [scores, setScores] = useState(null);
 
   useEffect(() => {
@@ -78,6 +91,9 @@ const HighScore = ({ imageID, colors }) => {
         <ul>
           <li>
             <h2>Level {imageID}</h2>
+            <span className="replay" onClick={() => setGameOver(false)}>
+              Play this level
+            </span>
           </li>
           {scores.map(({ name, time }) => {
             return (
