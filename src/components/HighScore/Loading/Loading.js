@@ -15,13 +15,13 @@ const StyledLoading = styled.div`
     animation-name: rotate;
     animation-duration: 2s;
     animation-iteration-count: infinite;
-    animation-timing-function: cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    animation-timing-function: ease;
     border-radius: 50%;
   }
 
   @keyframes rotate {
     to {
-      transform: rotate(180deg) scale(0.5);
+      transform: scale(0.5);
     }
   }
 
