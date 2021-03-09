@@ -37,6 +37,10 @@ const StyledLevels = styled.div`
     padding: 12px;
   }
 
+  .level-icon {
+    transition: background 0.1s ease, color 0.2s ease;
+  }
+
   @media (max-width: 767.99px) {
     & {
       grid-template-rows: repeat(auto-fit, minmax(1fr, 150px));
@@ -96,6 +100,7 @@ const Levels = (props) => {
     >
       {images.map((img, idx) => (
         <div
+          className="level-icon"
           key={img.id}
           onClick={() => {
             setCurrentImage(img);
