@@ -12,11 +12,7 @@ const StyledForm = styled.div`
   top: 30vh;
   left: calc(50% - 175px);
 
-  div {
-    display: flex;
-    flex-direction: column;
-  }
-  div input[type="text"] {
+  input[type="text"] {
     font-size: 14px;
     height: 35px;
     padding: 5px;
@@ -26,7 +22,7 @@ const StyledForm = styled.div`
     margin: 15px 0;
   }
 
-  div input[type="submit"] {
+  input[type="submit"] {
     border-style: none;
     padding: 15px 10px;
     border-radius: 4px;
@@ -60,15 +56,13 @@ function Form(props) {
 
   return (
     <StyledForm colors={colors} displayForm={displayForm}>
-      <div>
-        <p>You finished in {gameTime}s</p>
-        <input type={"text"} placeholder={"your name here"} min={2} max={24} />
-        <input
-          type={"submit"}
-          value={"Submit your score!"}
-          onClick={handleSubmit}
-        />
-      </div>
+      <p>You finished in {gameTime}s</p>
+      <input type={"text"} placeholder={"your name here"} min={2} max={24} />
+      <input
+        type={"submit"}
+        value={"Submit your score!"}
+        onClick={handleSubmit}
+      />
     </StyledForm>
   );
 }
