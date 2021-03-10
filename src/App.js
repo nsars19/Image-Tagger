@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import waldo1 from "./assets/waldo1.jpeg";
 import waldo2 from "./assets/waldo2.jpeg";
 import waldo3 from "./assets/waldo3.jpeg";
@@ -29,10 +29,6 @@ function App() {
   const [currentImage, setCurrentImage] = useState(null);
   const [imageID, setImageID] = useState(0);
   const [gameOver, setGameOver] = useState(false);
-
-  useEffect(() => {
-    document.title = "Where's Waldo?";
-  }, []);
 
   if (gameOver) {
     return (
