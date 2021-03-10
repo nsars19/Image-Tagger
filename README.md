@@ -1,6 +1,6 @@
 This is an image tagging application built for several reasons.
 
-View it live [here](https://nsars19.github.io/Image-Tagger/)!
+View it live [here](https://nsars19.github.io/Image-Tagger/)!\n
 The backend for this project can be found [here](https://github.com/nsars19/Image-Tagger-API).
 
 This application consumes JSON payloads from a separate Rails api that stores both the character location data and the highscores data.
