@@ -1,3 +1,4 @@
+import { useEffect, useRef } from "react";
 import styled from "styled-components";
 
 const StyledForm = styled.div`
@@ -44,6 +45,12 @@ const StyledForm = styled.div`
 function Form(props) {
   const { colors, displayForm, gameTime, imageID, setGameOver } = props;
 
+  const inputRef = useRef(null);
+
+  useEffect(() => {
+    inputRef.current.focus();
+  });
+
   const handleSubmit = async () => {
     const name = document.getElementById("score-name").value;
     const url = "https://serene-falls-76725.herokuapp.com";
@@ -57,6 +64,7 @@ function Form(props) {
     <StyledForm colors={colors} displayForm={displayForm}>
       <p>You finished in {gameTime}s</p>
       <input
+        ref={inputRef}
         type={"text"}
         id={"score-name"}
         placeholder={"your name here"}
