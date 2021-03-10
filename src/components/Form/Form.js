@@ -62,7 +62,6 @@ function Form(props) {
         placeholder={"your name here"}
         min={2}
         max={24}
-        pattern={"[w]+"}
       />
       <input
         type={"submit"}
