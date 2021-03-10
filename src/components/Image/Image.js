@@ -24,7 +24,8 @@ const Image = (props) => {
   // const locationInfo = useRef(null);
   useEffect(() => {
     (async function fetchData() {
-      const res = await fetch(`http://localhost:3000/levels/${imageID}`);
+      const URL = "https://serene-falls-76725.herokuapp.com";
+      const res = await fetch(`${URL}/levels/${imageID}`);
       const data = await res.json();
       setLocations(data);
     })();

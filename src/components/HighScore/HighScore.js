@@ -79,7 +79,8 @@ const HighScore = ({ imageID, colors, setGameOver }) => {
 
   useEffect(() => {
     (async function getHighScores() {
-      const res = await fetch(`http://localhost:3000/highscores/${imageID}`);
+      const url = "https://serene-falls-76725.herokuapp.com";
+      const res = await fetch(`${url}/highscores/${imageID}`);
       const data = await res.json();
 
       setScores(data);

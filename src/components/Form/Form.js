@@ -46,8 +46,8 @@ function Form(props) {
 
   const handleSubmit = async () => {
     const name = document.getElementById("score-name").value;
-    const url = "http://localhost:3000/highscores";
-    const params = `?name=${name}&time=${gameTime}&level_id=${imageID}`;
+    const url = "https://serene-falls-76725.herokuapp.com";
+    const params = `/highscores?name=${name}&time=${gameTime}&level_id=${imageID}`;
     const fullUrl = url + params;
     await fetch(fullUrl, { method: "post" });
     setGameOver(true);
@@ -62,6 +62,7 @@ function Form(props) {
         placeholder={"your name here"}
         min={2}
         max={24}
+        pattern={"[w]+"}
       />
       <input
         type={"submit"}
