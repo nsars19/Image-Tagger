@@ -4,4 +4,6 @@ This is an image tagging application built for several reasons.
 2) To practice building back-ends.
 3) To further practice by building with React/component based applications.
 
-view it live [here](https://nsars19.github.io/Image-Tagger/)!
+View it live [here](https://nsars19.github.io/Image-Tagger/)!
+
+The backend for this project can be found [here](https://github.com/nsars19/Image-Tagger-API).
