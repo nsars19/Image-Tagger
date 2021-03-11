@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.js": "/Image-Tagger/static/js/main.cdeca2a2.chunk.js",
-    "main.js.map": "/Image-Tagger/static/js/main.cdeca2a2.chunk.js.map",
+    "main.js": "/Image-Tagger/static/js/main.8fda155b.chunk.js",
+    "main.js.map": "/Image-Tagger/static/js/main.8fda155b.chunk.js.map",
     "runtime-main.js": "/Image-Tagger/static/js/runtime-main.12435553.js",
     "runtime-main.js.map": "/Image-Tagger/static/js/runtime-main.12435553.js.map",
     "static/css/2.a1596f27.chunk.css": "/Image-Tagger/static/css/2.a1596f27.chunk.css",
-    "static/js/2.d858a418.chunk.js": "/Image-Tagger/static/js/2.d858a418.chunk.js",
-    "static/js/2.d858a418.chunk.js.map": "/Image-Tagger/static/js/2.d858a418.chunk.js.map",
+    "static/js/2.7b471007.chunk.js": "/Image-Tagger/static/js/2.7b471007.chunk.js",
+    "static/js/2.7b471007.chunk.js.map": "/Image-Tagger/static/js/2.7b471007.chunk.js.map",
     "index.html": "/Image-Tagger/index.html",
     "static/css/2.a1596f27.chunk.css.map": "/Image-Tagger/static/css/2.a1596f27.chunk.css.map",
-    "static/js/2.d858a418.chunk.js.LICENSE.txt": "/Image-Tagger/static/js/2.d858a418.chunk.js.LICENSE.txt",
+    "static/js/2.7b471007.chunk.js.LICENSE.txt": "/Image-Tagger/static/js/2.7b471007.chunk.js.LICENSE.txt",
     "static/media/waldo.44fc792e.png": "/Image-Tagger/static/media/waldo.44fc792e.png",
     "static/media/waldo1.e1c596bd.jpeg": "/Image-Tagger/static/media/waldo1.e1c596bd.jpeg",
     "static/media/waldo2.0ad5f375.jpeg": "/Image-Tagger/static/media/waldo2.0ad5f375.jpeg",
@@ -22,7 +22,7 @@
   "entrypoints": [
     "static/js/runtime-main.12435553.js",
     "static/css/2.a1596f27.chunk.css",
-    "static/js/2.d858a418.chunk.js",
-    "static/js/main.cdeca2a2.chunk.js"
+    "static/js/2.7b471007.chunk.js",
+    "static/js/main.8fda155b.chunk.js"
   ]
 }
