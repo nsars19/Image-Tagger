@@ -20,6 +20,7 @@ const Image = (props) => {
     setLocations,
     setStartTime,
     colors,
+    charLocations,
   } = props;
   // Get character location data when an image is selected
   // Initialize a ref object to hold value of the data
@@ -38,7 +39,7 @@ const Image = (props) => {
   }, [setStartTime]);
 
   return (
-    (currentImage && (
+    (charLocations && (
       <StyledImage src={src} alt={alt} onClick={handleClick} id={id} />
     )) || <Loading colors={colors} />
   );
