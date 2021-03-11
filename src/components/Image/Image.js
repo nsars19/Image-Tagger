@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { useEffect } from "react";
+import Loading from "./Loading/Loading";
 
 const StyledImage = styled.img`
   max-width: 100%;
@@ -18,6 +19,7 @@ const Image = (props) => {
     imageID,
     setLocations,
     setStartTime,
+    colors,
   } = props;
   // Get character location data when an image is selected
   // Initialize a ref object to hold value of the data
@@ -35,7 +37,11 @@ const Image = (props) => {
     setStartTime(Date.now());
   }, [setStartTime]);
 
-  return <StyledImage src={src} alt={alt} onClick={handleClick} id={id} />;
+  return (
+    (currentImage && (
+      <StyledImage src={src} alt={alt} onClick={handleClick} id={id} />
+    )) || <Loading colors={colors} />
+  );
 };
 
 export default Image;

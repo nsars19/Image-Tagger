@@ -83,6 +83,7 @@ function Game(props) {
         charLocations={charLocations}
       />
       <Image
+        colors={colors}
         setStartTime={setStartTime}
         setLocations={setLocations}
         imageID={imageID}
